@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BusinessService } from '../services/business.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'listing Page Dr';
+  data = <any>[];
+  constructor(private bussiness: BusinessService) {
+    this.bussiness.getData().subscribe(data=>{
+      this.data = data;
+      console.warn(this.data)
+    });
+   }
 }

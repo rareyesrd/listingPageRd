@@ -2,13 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+import { HttpClientModule } from '@angular/common/http'
+// Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// Components
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/details/profile/profile.component';
 import { CommentsComponent } from './components/details/comments/comments.component';
 import { ResultsComponent } from './components/search/results/results.component';
 import { EngineComponent } from './components/search/engine/engine.component';
 import { HeaderComponent } from './components/header/header.component';
+import { from } from 'rxjs';
+ 
+//
+
 
 @NgModule({
   declarations: [
@@ -23,7 +31,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
