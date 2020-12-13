@@ -3,7 +3,6 @@ import { Observable, Subject, merge } from 'rxjs';
 import { NgbTypeaheadConfig } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { BusinessService } from '../../../services/business.service';
-import { parse } from 'path';
 
 @Component({
   selector: 'app-engine',
@@ -15,16 +14,27 @@ export class EngineComponent {
   title = "Find your business with us";
   slogan = "We provide the information that you are looking for";
   names = [];
-  categories = [];
+  id = <any>[];
+  country = "";
+  categories = <any>[];
   data = <any>[];
+
+  getCountry(item) {
+    const name = item.value;
+    for(let i = 0; i < this.data.length; i++){
+      if(this.data[i].name === name){
+        this.country = this.data[i].country;
+      }
+    }
+  }
   constructor(public bussiness: BusinessService, config: NgbTypeaheadConfig) {
     // customize default values of typeaheads used by this component tree
     config.showHint = true;
     // Getting the data from the Business API
     this.bussiness.getData().subscribe(data => {
       this.data = data;
-      console.log(this.data)
-      // Getting the business and categories names
+      // console.log(this.data)
+      // Getting the business id
       this.data.forEach(el => {
         this.names.push(el.name);
         el.categories.forEach(el => {
@@ -35,9 +45,8 @@ export class EngineComponent {
   }
 
   model: any;
-  category: any;
-  
-  @ViewChild('instance', {static: true}) instance: NgbTypeahead;
+
+  @ViewChild('instance', { static: true }) instance: NgbTypeahead;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
 
@@ -47,17 +56,8 @@ export class EngineComponent {
     const inputFocus$ = this.focus$;
 
     return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
-      map(term => (term === '' ? this.names
+      map((term, index) => (term === '' ? this.names
         : this.names.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10))
     );
   }
-
-  searchCategory = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map(term => term.length < 2 ? []
-        : this.categories.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
-
 }
