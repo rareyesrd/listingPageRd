@@ -1,0 +1,27 @@
+.Engine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+.Engine .content {
+    text-align: center;
+}
+
+.searcher{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff; */
+    padding: 20px 10px;
+    border-radius: 15px;
+}
+.searcher .form-control{
+    border-color: rgb(241, 233, 233);
+}
+.dropdown button{
+    border: 1px solid rgb(241, 233, 233);
+    background-color: #fff;
+}

@@ -1,3 +1,51 @@
+<div class="Engine">
+    <div class="content">
+        <h2>
+            {{ title }}
+        </h2>
+        <h5>
+            {{ slogan }}
+        </h5>
 
+        <div class="searcher">
+            <div class="row">
+                <div class="col-md-4">
+                     <input id="typeahead-focus" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"
+                placeholder="Business name"
+                 (focus)="focus$.next($any($event).target.value)"
+                (click)="click$.next($any($event).target.value)" #instance="ngbTypeahead" />
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          Select the country
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          Select the category
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <button id="search-btn">Search</button>
+                </div>
+            </div>
+           
+            
+        </div>
 
-
+    </div>
+</div>

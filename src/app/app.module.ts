@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http'
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// For search engine component from bootstrap
+import { FormsModule } from '@angular/forms';
+
 // Components
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/details/profile/profile.component';
@@ -13,9 +16,8 @@ import { CommentsComponent } from './components/details/comments/comments.compon
 import { ResultsComponent } from './components/search/results/results.component';
 import { EngineComponent } from './components/search/engine/engine.component';
 import { HeaderComponent } from './components/header/header.component';
-import { from } from 'rxjs';
  
-//
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
