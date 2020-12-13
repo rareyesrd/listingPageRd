@@ -21,7 +21,18 @@
 .searcher .form-control{
     border-color: rgb(241, 233, 233);
 }
-.dropdown button{
-    border: 1px solid rgb(241, 233, 233);
-    background-color: #fff;
+.searcher select{
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: #fff;
+    color: #6c757d;
+}
+.searcher #search-btn{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #fff;
+    color: #6c757d;
+    outline: none;
+    border-color: transparent;
 }

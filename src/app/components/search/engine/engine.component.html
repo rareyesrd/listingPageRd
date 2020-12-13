@@ -10,37 +10,33 @@
     <div class="searcher">
       <div class="row">
         <div class="col-md-4">
-          <input id="typeahead-focus" #names type="text" class="form-control" [(ngModel)]="model"
+          <input id="typeahead-focus" type="text" class="form-control" [(ngModel)]="model"
             [ngbTypeahead]="search" placeholder="Business name" (focus)="focus$.next($any($event).target.value)"
             (click)="click$.next($any($event).target.value)" #instance="ngbTypeahead" />
         </div>
         <div class="col-md-3">
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn" id="country" ngbDropdownToggle (click)="getCountry(names)">Select the country</button>
-            <div ngbDropdownMenu aria-labelledby="country">
-              <button ngbDropdownItem> {{ country }}</button>
-            </div>
-          </div>
-
-
+          <select name="country" id="country" [(ngModel)]="businessSelected" >
+            <option value="country" disabled selected>Select the country</option>
+            <option *ngFor="let country of data"  [value]="country.country">{{ country.country }}</option>
+          </select>
         </div>
         <div class="col-md-3">
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>Action - 1</button>
-              <button ngbDropdownItem>Another Action</button>
-              <button ngbDropdownItem>Something else is here</button>
-            </div>
-          </div>
+          <select name="category" id="category" [(ngModel)]="businessCategory">
+            <option value="country" disabled selected>Select the category</option>
+            <option *ngFor="let item of categories"  [value]="item.name"> {{ item.name}}  
+            </option>
+          </select>
         </div>
         <div class="col-md-2">
           <button id="search-btn">Search</button>
         </div>
       </div>
-
-
     </div>
 
+    <div class="results">
+      <p>The selected name is: {{ model }}</p>
+      <p>The selected country is: {{ businessSelected }}</p>
+      <p>The selected category is: {{ businessCategory }}</p>
+    </div>
   </div>
 </div>
