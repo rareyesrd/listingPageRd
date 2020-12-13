@@ -28,7 +28,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Dependencies
 
-Run `ng add @ng-bootstrap/ng-bootstrap` to install it.  
+Ng-bootstraop <br><br>
+Run `ng add @ng-bootstrap/ng-bootstrap` to install it.  <br>
+angular-particle <br><br>
+Run `npm i angular-particle` to install it. <br>
 
 
 
