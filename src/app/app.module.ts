@@ -9,6 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // For search engine component from bootstrap
 import { FormsModule } from '@angular/forms';
 
+// Particlejs
+import { ParticlesModule } from 'angular-particle';
+
 // Components
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/details/profile/profile.component';
@@ -35,7 +38,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
