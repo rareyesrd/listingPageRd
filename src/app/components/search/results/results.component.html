@@ -6,7 +6,7 @@
 <div class="Results">
   <div class="left">
     <div class="card-container">
-      <div class="card" *ngFor="let item of data | paginate: { itemsPerPage: 4, currentPage: p }">
+      <div class="card" *ngFor="let item of data | paginate: { itemsPerPage: 6, currentPage: p }">
         <div class="info-top">
           <div class="schedule">
             <div *ngIf="isDayTime; else close">
@@ -49,24 +49,14 @@
   </div>
   <div class="right">
     <h3 class="text-center">Comments</h3>
-    <div class="card" *ngFor="let item of data | paginate: { itemsPerPage: 2, currentPage: p }">
-      <div class="info-top">
-        <div class="schedule">
-          <div *ngIf="isDayTime; else close">
-            <small style="background-color: #39a979;">Open</small>
-          </div>
-          <ng-template #close class="close">
-            <small style="background-color: #a9394c;">Cerrado</small>
-          </ng-template>
-        </div>
-        <div class="rating">
-          <small>{{ item.score }} / 100000</small>
-        </div>
-      </div>
-      <img src="{{item.logo}}" alt="{{item.logo}}">
-      <div class="content">
-        <h4>{{ item.name }}</h4>
-        <small>{{item.description}}</small>
+    <div class="card pt-5" *ngFor="let comment of comments | paginate: { itemsPerPage: 2, currentPage: p }">
+      <div class="comments">
+        <h6>Name</h6>
+        <p>{{ comment.name }}</p>
+        <h6>Email</h6>
+        <p>{{ comment.email }}</p>
+        <h6>Message</h6>
+        <p>{{ comment.body }}</p>
       </div>
     </div>
   </div>
