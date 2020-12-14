@@ -1,30 +1,47 @@
-
-<!-- <div *ngFor="let item of results">
-    <p>{{ item.business }}</p> 
-    <p>{{ item.category }}</p> 
-    <p>{{ item.country }}</p> 
-</div> -->
-
-<div class="card-container">
-    <div class="card" *ngFor="let item of data">
-        <img src="{{item.logo}}" alt="{{item.logo}}">
-        <div class="content">
-            <h3>{{ item.name }}</h3>
-            <small>{{item.description}}</small>
-            <hr>
-            <div class="info-bottom">
-                <div>
-                    <p>{{ item.description }}</p>
-                </div>
-                <div>
-                    <h5>Website</h5>
-                    <a href="{{item.website}}" target="_blank">View<p></p></a>
-                </div>
-                <div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+<div *ngFor="let item of results">
+  <p>{{ item.business }}</p>
+  <p>{{ item.category }}</p>
+  <p>{{ item.country }}</p>
 </div>
+<div class="Results">
+  <div class="card-container">
+    <div class="card" *ngFor="let item of data">
+      <div class="info-top">
+        <div class="schedule">
+          <div *ngIf="isDayTime; else close">
+            <small style="background-color: #39a979;">Open</small>
+          </div>
+          <ng-template #close class="close">
+            <small style="background-color: #a9394c;">Cerrado</small>
+          </ng-template>
+        </div>
+        <div class="rating">
+          {{ item.score }}
+        </div>
+      </div>
+      <img src="{{item.logo}}" alt="{{item.logo}}">
+      <div class="content">
+        <h4>{{ item.name }}</h4>
+        <small>{{item.description}}</small>
+        <hr>
+        <div class="info-bottom">
+          <div>
+            <h6>City</h6>
+            <p>{{ item.city }}</p>
+          </div>
+          <div>
+            <h6>Website</h6>
+            <p> <a href="{{item.website}}" target="_blank">View</a></p>
+          </div>
+          <div>
+            <h6>Country</h6>
+            <p>{{ item.country }}</p>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre>Current page: {{page}}</pre>
+</div>

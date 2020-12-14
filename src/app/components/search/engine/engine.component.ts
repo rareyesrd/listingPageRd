@@ -31,7 +31,7 @@ export class EngineComponent {
     // Getting the data from the Business API
     this.bussiness.getData().subscribe((data) => {
       this.data = data;
-      // Getting the business id
+      // Getting the business name and category
       this.data.forEach(
         (el: { name: any; country: any; categories: any[] }) => {
           this.names.push(el.name);

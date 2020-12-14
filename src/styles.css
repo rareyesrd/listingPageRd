@@ -2,7 +2,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
-
+:root {
+    --main-color: #ee6c4d;
+    --secondary-color: #293241;
+  }
 body{
     margin: 0;
     padding: 0;

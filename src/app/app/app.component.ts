@@ -19,9 +19,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.myStyle  = {
-      'position': 'fixed',
+      'position': 'absolute',
       'width': '100%',
-      'height': '600px',
+      'height': '500px',
       'z-index': 0,
       'top': 0,
       'left': 0,
@@ -31,28 +31,28 @@ export class AppComponent implements OnInit {
     this.myParams = {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 50,
           "density": {
             "enable": true,
-            "value_area": 800
+            "value_area": 900
           }
         },
         "color": {
           "value": "#fff"
         },
         "shape": {
-          "type": "circle",
+          "type": "triangle",
           "polygon": {
             "nb_sides": 7
           },
           "image": {
             "src": "img/github.svg",
             "width": 100,
-            "height": 100
+            "height": 150
           }
         },
         "opacity": {
-          "value": 0.6,
+          "value": 0.7,
           "random": false,
           "anim": {
             "enable": false,
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#5B566E",
+          "color": "#f7f7f7",
           "opacity": 0.4,
           "width": 1.5
         },
