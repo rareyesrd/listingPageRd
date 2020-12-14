@@ -54,6 +54,8 @@ export class EngineComponent {
       { business: this.model },
     ];
     this.results = data;
+    console.log(this.results)
+
   }
 
   @ViewChild('instance', { static: true })

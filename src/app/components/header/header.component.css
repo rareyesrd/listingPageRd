@@ -1,0 +1,9 @@
+h3{
+    color: var(--main-color);
+    text-shadow: -1px 1px 2px #000;
+    z-index: 99;
+}
+h3 span{
+    color: #fff;
+    text-decoration: underline;
+}

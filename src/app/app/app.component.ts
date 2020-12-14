@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     this.myStyle  = {
       'position': 'absolute',
       'width': '100%',
-      'height': '500px',
+      // 'height': '500px',
       'z-index': 0,
       'top': 0,
       'left': 0,

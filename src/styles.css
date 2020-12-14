@@ -1,26 +1,45 @@
-
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-    --main-color: #ee6c4d;
-    --secondary-color: #293241;
+  --main-color: #ee6c4d;
+  --secondary-color: #293241;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.App {
+  background: url(./assets/img/header.jpg) no-repeat center center/cover;
+  height: 700px;
+}
+
+
+.Results {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+app-results {
+  width: 75%;
+}
+
+app-comments {
+  width: 25%;
+}
+
+@media(max-width:768px) {
+  app-results, app-comments {
+    width: 100%;
   }
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-img{
-    max-width: 100%;
-}
-
-.App{
-    background: url(./assets/img/header.jpg) no-repeat center center/cover;
-    height: 600px;
-}
-
-app-results{
-    max-width: 80%;
 }

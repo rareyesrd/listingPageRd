@@ -1,9 +1,9 @@
-<div *ngFor="let item of results">
+<!-- <div *ngFor="let item of results">
   <p>{{ item.business }}</p>
   <p>{{ item.category }}</p>
   <p>{{ item.country }}</p>
-</div>
-<div class="Results">
+</div> -->
+
   <div class="left">
     <div class="card-container">
       <div class="card" *ngFor="let item of data | paginate: { itemsPerPage: 6, currentPage: p }">
@@ -47,17 +47,4 @@
       <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
-  <div class="right">
-    <h3 class="text-center">Comments</h3>
-    <div class="card pt-5" *ngFor="let comment of comments | paginate: { itemsPerPage: 2, currentPage: p }">
-      <div class="comments">
-        <h6>Name</h6>
-        <p>{{ comment.name }}</p>
-        <h6>Email</h6>
-        <p>{{ comment.email }}</p>
-        <h6>Message</h6>
-        <p>{{ comment.body }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+

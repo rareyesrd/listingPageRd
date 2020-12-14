@@ -1,0 +1,11 @@
+.Footer{
+    text-align: center;
+    padding: 50px 0px;
+    
+}
+
+code {
+    color: var(--main-color);
+    text-decoration: underline;
+    font-weight: bold;
+}

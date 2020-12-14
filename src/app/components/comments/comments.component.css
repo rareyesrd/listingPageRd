@@ -1,0 +1,18 @@
+.right h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.right .card {
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-top: none;
+  border-bottom: none;
+}
+
+.comments {
+  overflow: auto;
+}
