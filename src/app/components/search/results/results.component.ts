@@ -8,7 +8,7 @@ import { BusinessService } from 'src/app/services/business.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  page = 4;
+  p: number = 1;
   @Input() results: any;
   data = <any>[];
   categories = <any>[];

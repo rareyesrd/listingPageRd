@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 // Particlejs
 import { ParticlesModule } from 'angular-particle';
 
+// Pagination
+import {NgxPaginationModule} from 'ngx-pagination';
+
 // Components
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/details/profile/profile.component';
@@ -39,7 +42,8 @@ import { HeaderComponent } from './components/header/header.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ParticlesModule
+    ParticlesModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
