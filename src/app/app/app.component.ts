@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  title = 'listing Page Dr';
   data = <any>[];
   constructor() {
 

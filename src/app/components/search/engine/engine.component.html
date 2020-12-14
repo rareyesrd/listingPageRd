@@ -28,15 +28,11 @@
           </select>
         </div>
         <div class="col-md-2">
-          <button id="search-btn">Search</button>
+          <button id="search-btn" (click)="getResults()">Search</button>
         </div>
       </div>
     </div>
-
-    <div class="results">
-      <p>The selected name is: {{ model }}</p>
-      <p>The selected country is: {{ businessSelected }}</p>
-      <p>The selected category is: {{ businessCategory }}</p>
-    </div>
   </div>
 </div>
+
+<app-results [results]="results" ></app-results>

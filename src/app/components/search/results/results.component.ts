@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BusinessService } from 'src/app/services/business.service';
 
 
@@ -9,6 +9,7 @@ import { BusinessService } from 'src/app/services/business.service';
 })
 export class ResultsComponent implements OnInit {
 
+  @Input() results: any;
   data = <any>[];
   constructor(private business: BusinessService) {
       this.business.getData().subscribe(data=>{

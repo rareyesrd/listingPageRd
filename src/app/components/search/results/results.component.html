@@ -1,5 +1,30 @@
-<p>results works!</p>
 
-<!-- <div *ngFor="let item of data">
-  <p>{{ item.name }}</p>
+<!-- <div *ngFor="let item of results">
+    <p>{{ item.business }}</p> 
+    <p>{{ item.category }}</p> 
+    <p>{{ item.country }}</p> 
 </div> -->
+
+<div class="card-container">
+    <div class="card" *ngFor="let item of data">
+        <img src="{{item.logo}}" alt="{{item.logo}}">
+        <div class="content">
+            <h3>{{ item.name }}</h3>
+            <small>{{item.description}}</small>
+            <hr>
+            <div class="info-bottom">
+                <div>
+                    <p>{{ item.description }}</p>
+                </div>
+                <div>
+                    <h5>Website</h5>
+                    <a href="{{item.website}}" target="_blank">View<p></p></a>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

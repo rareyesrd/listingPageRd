@@ -10,10 +10,14 @@ body{
 }
 
 img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .App{
     background: url(./assets/img/header.jpg) no-repeat center center/cover;
     height: 600px;
+}
+
+app-results{
+    max-width: 80%;
 }
